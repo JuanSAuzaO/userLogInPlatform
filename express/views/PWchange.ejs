@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            h1 {
+                position:relative;
+                text-align: center;
+                color:#1F348F;
+                margin-top:-10px;
+            }
+           .f1 {
+                position:relative;
+                border-radius:15px;
+                margin-left:38%;
+                margin-top:7.5%;
+                background-color:#e7e6e6;
+                padding-top:20px;
+                border-width: 2px;
+                border-style: solid;
+                border-color:black;
+                width:450px;
+           }
+           #f11, #f12{
+               margin:20px;
+               margin-top:10px;
+               font-size:22px;
+               border-color:#E9121F;
+               border-top:0px;
+               border-right:0px;
+               border-left:0px;
+               background-color:#e7e6e6;
+           }
+           #f13{
+               margin:20px;
+               font-size:22px;
+               font-weight:bold;
+               background-color: black;
+               color:white;
+           }
+           #f13:hover {
+            background-color:#E9121F;
+           }
+           text {
+               position:relative;
+               font-size:24px;
+               text-align:right;
+               margin-left:5.9%;
+               font-weight:bold;
+           }
+           #li{
+               font-size:24px;
+               color:red;
+               text-align:left;
+               margin-left:2%;
+               font-weight:bold;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="f1">
+            <h1>¡Cambia tu contraseña!</h1>
+            <ul>
+                <% if(typeof errors != 'undefined') { %>
+                    <% errors.forEach(error => { %>
+                        <li id="li"><%= error.message %></li>
+                    <% }) %>
+                <% } %></ul>
+            <form action="/PWC?" class="form" method="POST">
+                <text>Nueva Contraseña</text>
+                <input id="f11" type="password" name="password" required>
+                <br>
+                <text>Confimar Contraseña</text>
+                <input id="f12" type="password" name="password2" required>
+                <br>
+                <button id= "f13" type="submit">¡Enviar!</button>
+            </form>
+        </div>
+    </body>
+</html>

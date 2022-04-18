@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            h1 {
+                position:relative;
+                text-align: center;
+                color:#1F348F;
+                margin-top:-10px;
+            }
+            h2 {
+                position:relative;
+                text-align: center;
+                color:#1F348F;
+                margin-top:-5px;
+            }
+            h2:hover{
+                color:purple;
+            }
+           .f1 {
+                position:relative;
+                border-radius:15px;
+                margin-left:38%;
+                margin-top:7.5%;
+                background-color:#e7e6e6;
+                padding-top:20px;
+                border-width: 2px;
+                border-style: solid;
+                border-color:black;
+                width:450px;
+           }
+           #f11{
+               margin:20px;
+               margin-top:10px;
+               font-size:22px;
+               border-color:#E9121F;
+               border-top:0px;
+               border-right:0px;
+               border-left:0px;
+               background-color:#e7e6e6;
+           }
+           #f13{
+               margin:20px;
+               font-size:22px;
+               font-weight:bold;
+               background-color: black;
+               color:white;
+           }
+           #f13:hover {
+            background-color:#E9121F;
+           }
+           text {
+               position:relative;
+               font-size:24px;
+               text-align:right;
+               margin-left:5.9%;
+               font-weight:bold;
+           }
+           p {
+               position:relative;
+               font-size:24px;
+               text-align:justify;
+               margin-left:2.5%;
+               margin-right:2.5%;
+               font-weight:bold;
+           }
+           #li{
+               font-size:24px;
+               color:red;
+               text-align:left;
+               margin-left:5.9%;
+               font-weight:bold;
+           }
+           #li1 {
+               font-size:24px;
+               color:green;
+               text-align:left;
+               margin-left:5.9%;
+               font-weight:bold;
+           }
+        </style>
+    </head>
+    <body>
+        <div class="f1">
+            <h1>RECUPERACIÓN DE CONTRASEÑA</h1>
+            <ul>
+                <% if (message == "Mensaje enviado exitosamente" ) { %>
+                    <li id="li1"><%= message %></li>
+                <% } else if (message == "Verifique el correo ingresado") { %>
+                    <li id="li"><%= message %></li>
+                <% } %>
+            </ul>
+            <form action="/Recuperacion_contrasena" class="form" method="POST">
+                <text>Email<br></text>
+                <input id="f11" type="text" name="email" required>
+                <br>
+                <button id= "f13" type="submit">¡Enviar!</button>
+            </form>
+            <p>Enviaremos un correo para que cambies tu contraseña.</p>
+            <a href="http://localhost:5000/Iniciar_sesion"><h2>Iniciar sesión</h2></a>
+            <a href="http://localhost:5000/Crear_cuenta"><h2>No tengo una cuenta aún</h2></a>
+        </div>
+    </body>
+</html>
